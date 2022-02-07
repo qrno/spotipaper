@@ -23,7 +23,8 @@ fi
 
 cp $CURRENT_ALBUM $LAST_ALBUM
 artUrl=$(playerctl metadata mpris:artUrl --player spotify) 
-wget $artUrl -O $DIR/cover.png
+curl $artUrl -o $DIR/cover.png
+sleep 0.1
 
 convert $DIR/cover.png \
   -blur 0x8 \
